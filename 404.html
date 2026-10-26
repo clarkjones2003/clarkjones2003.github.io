@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:linear-gradient(180deg,#4F7DFF,#2446D8 45%,#152C9C);color:#fff;font-family:Nunito,system-ui,sans-serif;font-weight:900;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{width:100%;max-width:380px;text-align:center}
+h1{font-size:40px;letter-spacing:-.5px;-webkit-text-stroke:6px #1B1446;paint-order:stroke fill;margin-bottom:6px}
+.sub{font-weight:800;opacity:.9;font-size:16px;margin-bottom:22px}
+.code{display:flex;gap:8px;justify-content:center;margin:6px 0 22px}
+.code span{background:#fff;color:#2446D8;width:58px;height:66px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 5px 0 #8FA3F0}
+.eyebrow{font-size:12px;letter-spacing:1.4px;opacity:.85}
+.btn{display:block;text-decoration:none;color:#fff;background:#3FD35A;border:3px solid #fff;box-shadow:0 0 0 2.5px #1B1446,0 6px 0 2.5px #1B1446;border-radius:18px;padding:14px;font-size:19px;letter-spacing:.6px;margin:0 6px 18px}
+.btn.alt{background:#735CF0}
+.note{font-weight:800;font-size:14px;opacity:.9;line-height:1.45}
+.foot{margin-top:28px;font-size:12px;opacity:.7;font-weight:800}
+.foot a{color:#fff}
+</style><title>Join my Chat Race</title>
+<meta property="og:title" content="join my chat race 🏁"><meta property="og:description" content="tap to join the room">
+</head><body><div class="card" id="card">
+<h1>Chat Race</h1><p class="sub">race your thumbs. the texting race game with your friends.</p>
+<a class="btn" href="https://apps.apple.com/app/id6816521137">GET CHAT RACE</a></div>
+<script>
+(function () {
+  var m = location.pathname.match(/^\/j\/([A-Za-z0-9]{4})\/?$/);
+  if (!m) return;
+  var code = m[1].toUpperCase();
+  var tiles = code.split('').map(function (c) { return '<span>' + c + '</span>'; }).join('');
+  document.title = 'Join room ' + code + ' · Chat Race';
+  document.getElementById('card').innerHTML =
+    '<p class="eyebrow">YOU\u2019RE INVITED TO A ROOM</p><div class="code">' + tiles + '</div>' +
+    '<a class="btn alt" href="chat-race://j/' + code + '">OPEN IN CHAT RACE</a>' +
+    '<a class="btn" href="https://apps.apple.com/app/id6816521137">GET CHAT RACE</a>' +
+    '<p class="note">already have it? tap open, or open the app, tap <b>Join</b> and type <b>' + code + '</b>.</p>';
+})();
+</script></body></html>
